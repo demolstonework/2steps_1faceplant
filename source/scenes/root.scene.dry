@@ -831,12 +831,14 @@ go-to: 1928_main
 May history have mercy on us, for the world will not.
 
 @1928_silly_mode
+subtitle: You get cheats and the ability to become social facists. 
 on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; Silly =1;
 go-to: 1928_main
 
 May history have mercy on us, for the world will not.
 
 @1928_sillier_mode
+subtitle: You get cheats, the ability to become social facists AND lucid nightmare stats, truly a way to play. 
 on-arrival: {!
 Q.difficulty = -1;
 Q.resources = 4;
