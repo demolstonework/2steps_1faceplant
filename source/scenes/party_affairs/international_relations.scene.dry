@@ -93,6 +93,17 @@ The Socialist Party of America is swelling with new members who were inspired by
 
 We do not need the international contacts at the moment.
 
+
+@Italy
+subtitle: -1 resources
+choose-if: resources >= 1 and (nsdap_relation > 0 and left_strength < center_strength)
+view-if: nsdap_relation > 0 or Silly = 1
+unavailable-subtitle: [? if resources < 1 : Not enough resources. ?][? if nsdap_relation <= 0 : We have no intrest in Facism at this moment. ?][? if center_strength < left_strength : The left wing of the party will never agree to thos. ?]
+on-arrival: resources -= 1; nsdap_relation += 6*(1-dissent); kpd_relation -= 5; z_relation -= 1; dvp_relation -= 3; ddp_relation -= 4; left_dissent += 6; labor_dissent += 1; center_dissent -= 1; dnvp_relation += 3; kpd_relation -= 5
+
+The Communist see this as proof of our "Social-Facism". The Italian National Facist Party refused to receive our delagation. Noone except a few rightw wing politicians welcome our overtunes to the Italians. 
+
+
 ########### Secret Golden Centrist Marxism Path
 
 @unity
