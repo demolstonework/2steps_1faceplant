@@ -722,8 +722,8 @@ Now, choose your difficulty:
 - @1928_hard: Begin (hard difficulty)
 - @1928_nightmare: Begin (nightmare difficulty)
 - @1928_lucid_nightmare: Begin (lucid nightmare difficulty)
-- @1928_silly_mode: Begin (:3)
-- @1928_sillier_mode: Begin (lucid nightmare :3)
+- @1928_silly_mode: Begin (Prove the kdp right (also cheats))
+- @1928_sillier_mode: Begin (Become the nightmare)
 
 @1928_test
 on-arrival: difficulty = -1; resources = 99; dues = 4; budget = 99; rb_strength = 9000; rb_militancy = 5; kpd_relation = 99; z_relation = 99; dvp_relation = 99; reichswehr_loyalty = 0.5; workers_spd += 30; unemployed_spd += 30; new_middle_spd += 30; old_middle_spd += 30; rural_spd += 30; catholics_spd += 30
