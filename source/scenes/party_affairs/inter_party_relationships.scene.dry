@@ -14,6 +14,7 @@ The SPD cannot govern by itself yet. Because we do not have an electoral majorit
 - @liberals: Strengthen our bonds with the left-liberal German Democratic Party and conservative-liberal German People's Party.
 - @center: Strengthen our bonds with the Catholic Center Party.
 - @kpd: Work towards repairing relationships with the Communist Party.
+- @right_party_inter_relations: Strenghten our bonds to our natural allies, the conservative German National People's Party and the Völkisch National Socialist German Wokers Party.
 - @spd_alone: The SPD can stand alone for now.
 - @easy_discard
 
@@ -112,6 +113,29 @@ The liberal parties (both the DDP and DVP) are electorally moribund, so perhaps 
 
 However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
 
+@right_party_inter_relations
+subtitle: -2 resources
+view-if: nsdap_relation > 3 or dnvp_relation > 20 or Silly = 1
+choose-if: resources >= 2
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; nsdap_relation -= 1 if spd_in_government == 1; dnvp_relation -= 1 if spd_in_government == 1; nsdap_relation -= 1 if (ideology == "left" or kpd_relation > 25)
+go-to: rpir1 if nsdap_relation <= 25; rpir2 if nsdap_relation >= 25
+
+@rpir1
+on-arrival: nsdap_relation += 4*(1 - dissent); dnvp_relation += 4*(1 - dissent)
+
+Establishing relations with our natural allies is going difficult since the rank and file of our party and the leadership of their parties still see the other as the enemy.
+
+[? if spd_in_government = 1 : Furthermore, our participation in government makes us, in their eyes, the cause of Germany's current sittuation. ?]
+[? if kpd_relation > 25 : In their eyes, we are to close to the communists and this also complicates our relations. ?]
+
+@rpir2
+on-arrival: nsdap_relation += 5*(1 - dissent); dnvp_relation += 5*(1 - dissent)
+
+We have succesfully convinced the Rightwing parties that we are not the main enemies, still maintaining good relations is difficult.
+
+[? if spd_in_government = 1 : Furthermore, our participation in government makes us, in their eyes, the cause of Germany's current sittuation. ?]
+[? if kpd_relation > 25 : In their eyes, we are to close to the communists and this also complicates our relations. ?]
 @spd_alone
 
 Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
