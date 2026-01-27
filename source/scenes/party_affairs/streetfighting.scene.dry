@@ -13,14 +13,18 @@ tags: party_affairs; antifascism
 We must do something to protect the workers against these predations.
 
 - @test_battle: Test our defense units in battle against the fascists!
+- @test_battle_SoFa: Test our defense units in battle against the Communists!
 - @break_sa_rally: Send our strongest units to disrupt Nazi rallies!
+- @break_rfb_rally: Send our strongest units to disrupt Communist rallies!
 - @arm_rb: Increase training and armaments for the Reichsbanner.
 - @if_training: Train union members to fight as part of the Iron Front.
 - @prussian_police_training: Use the Prussian police to help train the Reichsbanner.
 - @military_training: Use our military connections to covertly arm the Reichsbanner.
 - @peace: Try to avoid all militant confrontations, as much as possible.
 - @truce_rfb: Try to make peace with the RFB.
+- @truce_sa: Try to make peace with the SA.
 - @teamwork_rfb: Coordinate Reichbanner actions with the RFB.
+- @teamwork_sa: Coordinate Reichbanner actions with the SA.
 - @let_them_die
 - @easy_discard
 
@@ -31,11 +35,35 @@ max-visits: 1
 
 Many Reichsbanner members are not ready for actual fighting, and thus quit. However, the remainder are toughened as a result. Our confrontations also provide ample recruiting material for the Nazi SA.
 
+@test_battle_SoFa
+view-if: rb_militancy > 0.1 and rb_militancy < 0.5 and rb_banned = 0 and kpd_relation <= 10
+on-arrival: rb_militancy += 0.1; RFB_strength += 90; rb_strength -= 100; strife += 1; kpd_relation -= 10;
+max-visits: 1
+
+Many Reichsbanner members are not ready for actual fighting, and thus quit. However, the remainder are toughened as a result. Our confrontations also provides additional proof of the Communist theory of "Social Facism" and recruitment material for the Communist RFB.
+
+@break_rfb_rally
+view-if: rb_militancy >= 0.5 and rb_banned = 0
+on-arrival: strife += 1; our_strength = rb_strength*rb_militancy*(1-dissent) + sa_strength*sa_militancy*0.8 if (sa truce = 1) ; enemy_strength = rfb_streght*rfb_militancy*1+prussian_police_strength*prussian_police_militancy*2 if (not spd_prussia) and (prussian_police_loyality >=1);
+go-to: break_rally_fail_sofa if our_strength < enemy_strength; break_rally_succeed_sofa if our_strength >= enemy_strength
+
+Our street troops disrupt a KDP rally to prevent the Communists from meeting. The RFB fighters immediately wade into the fray. [? if (not spd_prussia) and (prussian_police_loyality) >=1: The police attempts to defend the communists in their lawfull speach, many in the reichsbanner are not happy they had to face law enforcement. ?] [? if (not spd_prussia) and (prussian_police_loyality) <=1: The police has been deployed against both sides. ?]
+
+@break_rally_fail_sofa
+on-arrival: workers_kdp += 3; old_middle_kdp += 1; new_middle_kdp += 1; unemployed_kdp += 1; workers_sdp -= 3; old_middle_sdp -= 1; new_middle_sdp -= 1; unemployed_sdp -= 1; rb_strength -= 50; rfb_strength += 50
+
+Unfortunately, the Reichsbanner was not able to overcome the RFB mob. The Communist meeting goes ahead as usual and their theory of social facism gains more credence.
+
+@break_rally_succeed_sofa
+on_arrival: workers_kdp += 3; unemployed_kdp += 1; rfb_strength -= 20
+
+Our disruption is successful! The Communists are cowed by our show of strength and flee the scene.
+
 @break_sa_rally
 view-if: rb_militancy >= 0.5 and rb_banned = 0
 on-arrival: strife += 1; spd_hostile += 1; our_strength = rb_strength*rb_militancy*(1-dissent); enemy_strength = sa_strength*sa_militancy*0.8; prussian_police_loyalty -= 0.05; enemy_strength += prussian_police_strength*prussian_police_militancy*(1-prussian_police_loyalty) if (not spd_prussia); pacifism -= 1;
 go-to: break_rally_fail if our_strength < enemy_strength; break_rally_succeed if our_strength >= enemy_strength
-
+ 
 Our street troops disrupt a NSDAP rally to prevent the Nazis from meeting. The SA goons immediately wade into the fray. [? if spd_prussia: The police attempts to hold the two groups apart, with great resentment and little success. ?] [? if (not spd_prussia): The police has been deployed against the Reichsbanner. ?] 
 
 @break_rally_fail
