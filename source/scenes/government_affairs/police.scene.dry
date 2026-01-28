@@ -96,6 +96,7 @@ By cross-referencing the police's findings with earlier investigations of the fa
 
 @investigate_far_left_failure
 on-arrival: kpd_coalition_dissent += 1; kpd_relation -= 5;
+
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by overly eager right-wing sympathizers within the police.
 
 @investigate_far_left_succes
@@ -107,6 +108,7 @@ on-arrival: kpd_coalition_dissent += 1; nsdap_relation += 4; dnvp_relation += 2;
 
 @investigate_far_left_nothing
 on-arrival: kpd_coalition_dissent += 1; kpd_relation -= 5;
+
 Despite all our efforts, our investigations into the far left have failed to turn up anything conclusive so far. Perhaps we are looking at the problem from the wrong angle.
 
 @ban_kpd
