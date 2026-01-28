@@ -21,6 +21,7 @@ The Judiciary is one of the most reactionary components of the government, along
 - @reform: Carry out substantial judicial reforms.
 - @minor_reforms: Carry out minor judicial reforms.
 - @make_worse: Take advantage of rampant corruption.
+- @make_even_worse: Roll back judicial reforms.
 - @as_is: Leave the judiciary as it is.
 - @easy_discard
 
@@ -46,6 +47,11 @@ on-arrival: resources -= corrupt_judiciary_costs; democratization -= 2; coalitio
 
 [? if corrupt_judiciary_costs <= 2: We investigate the most corrupt jurists and make discreet contributions to ensure that their rulings are favorable to us and our coalition allies. 
 [? if corrupt_judiciary_costs >= 3: We have already bought out the most corrupt jurists. The loyalties of the rest comes at an increasingly high price. ?]
+
+@make_even_worse
+view-if: judicial_reform >= 2 and (nsdap_relation > 30 or dnvp_relation > 30) and center_strength > (left_strength + labor_strength) 
+on-arrival: judicial_reform -= 2; democratization -= 2; old_middle_spd += 2*(1-dissent); workers_spd -= 1; workers_spd -= 1 if democratization >= 1; workers_spd -= 1 if democratization >= 2; workers_spd -= 1 if democratization >= 3; pro_republic -= 4; coup_progress -= 1; coalition_dissent -= 1 if in_grand_coalition = 1; nsdap_relation += 3; dnvp_relation += 3; 
+We have begun judicial counter-reform. Changes in judicial proceedings shall cease to be in force. All investigations were terminated, previously suspended lawyers are reinstated to their previous positions.
 
 @as_is
 go-to: root
