@@ -686,7 +686,7 @@ How transparent and flexible should your choices and consequences be?
 
 - @normal_info: Normal (same as base game)
 - @limit_info: Limited (same as historical mode)
-- @Evil: edited (the kdp may be right)
+- @evil: edited (the kdp may be right)
 
 @normal_info
 on-arrival: infodump = 0;
