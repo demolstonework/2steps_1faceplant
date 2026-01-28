@@ -51,6 +51,7 @@ on-arrival: resources -= corrupt_judiciary_costs; democratization -= 2; coalitio
 @make_even_worse
 view-if: judicial_reform >= 2 and (nsdap_relation > 30 or dnvp_relation > 30) and center_strength > (left_strength + labor_strength) 
 on-arrival: judicial_reform -= 2; democratization -= 2; old_middle_spd += 2*(1-dissent); workers_spd -= 1; workers_spd -= 1 if democratization >= 1; workers_spd -= 1 if democratization >= 2; workers_spd -= 1 if democratization >= 3; pro_republic -= 4; coup_progress -= 1; coalition_dissent -= 1 if in_grand_coalition = 1; nsdap_relation += 3; dnvp_relation += 3; 
+
 We have begun judicial counter-reform. Changes in judicial proceedings shall cease to be in force. All investigations were terminated, previously suspended lawyers are reinstated to their previous positions.
 
 @as_is
