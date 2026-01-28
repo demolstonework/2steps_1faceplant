@@ -101,6 +101,7 @@ Unfortunately, our investigations have failed to turn up anything. Rumors are th
 
 @investigate_far_left_succes
 on-arrival: kpd_coalition_dissent += 1; nsdap_relation += 4; dnvp_relation += 2; kpd_relation -= 5; investigate_far_left += 1; rfb_strength -= 5; workers_kpd -= 1; workers_kpd -= 1 if investigate_far_left == 2; rfb_strength -= 10 if investigate_far_left == 2; rural_kpd -= 3 if investigate_far_left == 3; workers_kpd -= 3 if investigate_far_left == 3; unemployed_kpd -= 2 if investigate_far_left == 3; old_middle_kpd -= 4 if investigate_far_left == 3; new_middle_kpd -= 2 if investigate_far_left == 3
+
 [? if investigate_far_left == 1 : We have started an investigation into the criminal activities of the Communists, but so far there are no significant results. 
 [? if investigate_far_left == 2 : We found a small number of weapons that may be related to the Red Front Fighters' League. 
 [? if investigate_far_left == 3 : We searched the house named after Karl Liebknecht, where the Central Committee of the KPD was located, we did not find anything serious, but we started rumors about the uprising plans found there, weapons depots, mysterious catacombs. 
