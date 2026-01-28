@@ -87,7 +87,7 @@ on-arrival: investigate_far_right += 1; sa_strength -= 20; workers_nsdap -= 3; n
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
 
 @investigate_far_left
-go-to: investigate_far_left_falseflag if (interior_police_loyalty >= 0.6 and investigate_far_right >= 3 and reichstag_burn = 0); investigate_far_left_failure if interior_police_loyalty < 0.6; investigate_far_left_succes if interior_police_loyalty > 0.6
+go-to: investigate_far_left_falseflag if (interior_police_loyalty >= 0.6 and investigate_far_right >= 3 and reichstag_burn = 0); investigate_far_left_failure if interior_police_loyalty < 0.6; investigate_far_left_succes if interior_police_loyalty > 0.6 and silly = 1; investigate_far_left_nothing if interior_police_loyalty > 0.6 and silly < 1;
 
 @investigate_far_left_falseflag
 on-arrival: reichstag_burn = 1; sa_strength -= 60; workers_nsdap -= 6; new_middle_nsdap -= 6; old_middle_nsdap -= 6; workers_kpd += 5; workers_spd += 3*(1-dissent); kpd_relation += 6; coup_progress -= 3 if coup_progress >= 3;
@@ -95,7 +95,7 @@ on-arrival: reichstag_burn = 1; sa_strength -= 60; workers_nsdap -= 6; new_middl
 By cross-referencing the police's findings with earlier investigations of the far right, we have uncovered a Nazi plot to burn down the Reichstag and frame the Communists for it! Thankfully, we have managed to foil their treacherous plot. Our allies in the KPD are grateful for the help, and agree to overlook the police intrusion in their affairs - this time.
 
 @investigate_far_left_failure
-
+on-arrival: kpd_coalition_dissent += 1; kpd_relation -= 5;
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by overly eager right-wing sympathizers within the police.
 
 @investigate_far_left_succes
@@ -104,6 +104,10 @@ on-arrival: kpd_coalition_dissent += 1; nsdap_relation += 4; dnvp_relation += 2;
 [? if investigate_far_left == 2 : We found a small number of weapons that may be related to the Red Front Fighters' League. 
 [? if investigate_far_left == 3 : We searched the house named after Karl Liebknecht, where the Central Committee of the KPD was located, we did not find anything serious, but we started rumors about the uprising plans found there, weapons depots, mysterious catacombs. 
 [? if investigate_far_left > 3 : Practically nothing more can be done within the framework of the law - the communists carefully hide the traces of their crimes. ?][? if (investigate_far_right < 3 kpd_banned = 1) Perhaps we should now focus on the other extreme?]
+
+@investigate_far_left_nothing
+on-arrival: kpd_coalition_dissent += 1; kpd_relation -= 5;
+Despite all our efforts, our investigations into the far left have failed to turn up anything conclusive so far. Perhaps we are looking at the problem from the wrong angle.
 
 @ban_kpd
 unavailable-subtitle: Following our justice reforms, the courts now need more evidence then we can supply if we want the KDP to be banned
