@@ -37,7 +37,6 @@ Current interior police loyalty: [+ interior_police_loyalty : loyalty +]
 
 
 @obedience
-view-if: difficulty = -1;
 on-arrival: interior_police_loyalty += 1;
 title: Severing wants to cleanse the interior police 
 
