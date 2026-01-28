@@ -85,9 +85,8 @@ on-arrival: investigate_far_right += 1; sa_strength -= 20; workers_nsdap -= 3; n
 
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the police.
 
-
 @investigate_far_left
-go-to: investigate_far_left_falseflag if (interior_police_loyalty >= 0.6 and investigate_far_right >= 3 and reichstag_burn = 0); investigate_far_left_failure if interior_police_loyalty < 0.6; investigate_far_left_succes if interior_police_loyalty > 0.6 and silly = 1; investigate_far_left_nothing if interior_police_loyalty > 0.6 and silly < 1;
+go-to: investigate_far_left_falseflag if (interior_police_loyalty >= 0.6 and investigate_far_right >= 3 and reichstag_burn = 0); investigate_far_left_failure if interior_police_loyalty < 0.6; investigate_far_left_succes if interior_police_loyalty > 0.6; investigate_far_left_nothing if interior_police_loyalty > 0.6 and silly < 1;
 
 @investigate_far_left_falseflag
 on-arrival: reichstag_burn = 1; sa_strength -= 60; workers_nsdap -= 6; new_middle_nsdap -= 6; old_middle_nsdap -= 6; workers_kpd += 5; workers_spd += 3*(1-dissent); kpd_relation += 6; coup_progress -= 3 if coup_progress >= 3;
