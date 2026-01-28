@@ -686,7 +686,7 @@ How transparent and flexible should your choices and consequences be?
 
 - @normal_info: Normal (same as base game)
 - @limit_info: Limited (same as historical mode)
-- @evil: edited (the kdp may be right)
+- @evil_info: Edited (the kdp may be right)
 
 @normal_info
 on-arrival: infodump = 0;
@@ -704,7 +704,7 @@ go-to: difficulty_choice
 
 No saving, no loading, no discarding, no fundraising, no mercy. We hope you know what you're doing.
 
-@evil
+@evil_info
 on-arrival: infodmp = 1; silly = 1;
 go-to: difficulty_choice
 
