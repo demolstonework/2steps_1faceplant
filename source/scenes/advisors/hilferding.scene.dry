@@ -29,8 +29,8 @@ We have reduced the strength of the dissident factions in the party.
 @printer
 title: Print money
 subtitle: Hilferding uses a money printer
-on-arrival: resources += 100; hilferding_printer += 1;
-
+choose-if: difficulty = -1
+on-arrival: resources += 100;
 Why does he have this!?!?!
 
 @toleration
