@@ -44,7 +44,7 @@ Many Reichsbanner members are not ready for actual fighting, and thus quit. Howe
 
 @break_rfb_rally
 view-if: rb_militancy >= 0.5 and rb_banned = 0
-on-arrival: strife += 1; our_strength = rb_strength*rb_militancy*(1-dissent) + sa_strength*sa_militancy*0.8 if (sa truce = 1) ; enemy_strength = rfb_streght*rfb_militancy*1+prussian_police_strength*prussian_police_militancy*2 if (not spd_prussia) and (prussian_police_loyality >=1);
+on-arrival: strife += 1; our_strength = rb_strength*rb_militancy*(1-dissent) + sa_strength*sa_militancy*0.8 if (sa truce = 1) ; enemy_strength = rfb_streght*rfb_militancy*1;
 go-to: break_rally_fail_sofa if our_strength < enemy_strength; break_rally_succeed_sofa if our_strength >= enemy_strength
 
 Our street troops disrupt a KDP rally to prevent the Communists from meeting. The RFB fighters immediately wade into the fray. [? if (not spd_prussia) and (prussian_police_loyality) >=1: The police attempts to defend the communists in their lawfull speach, many in the reichsbanner are not happy they had to face law enforcement. ?] [? if (not spd_prussia) and (prussian_police_loyality) <=1: The police has been deployed against both sides. ?]
