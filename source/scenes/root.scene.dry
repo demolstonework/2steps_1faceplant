@@ -714,16 +714,11 @@ You will have additional insights to guide your decisions.
 
 Now, choose your difficulty:
 
-- @1928_test: Begin (PLAYTEST MODE - STUFF WILL BREAK)
 - @1928_easy: Begin (easy difficulty)
 - @1928_normal: Begin (normal difficulty)
 - @1928_hard: Begin (hard difficulty)
 - @1928_nightmare: Begin (nightmare difficulty)
 - @1928_lucid_nightmare: Begin (lucid nightmare difficulty)
-
-#@1928_test
-on-arrival: difficulty = -1; resources = 99; dues = 4; budget = 99; rb_strength = 9000; rb_militancy = 5; kpd_relation = 99; z_relation = 99; dvp_relation = 99; reichswehr_loyalty = 0.5; workers_spd += 30; unemployed_spd += 30; new_middle_spd += 30; old_middle_spd += 30; rural_spd += 30; catholics_spd += 30
-go-to: 1928_main
 
 @1928_easy
 subtitle: [? if infodump >= 1 : More resources, good relations, free leadership changes. ?] Recommended for exploring new content.
