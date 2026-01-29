@@ -126,12 +126,21 @@ We have made at least a temporary truce with the KPD, so that our respective par
 
 @teamwork_rfb
 choose-if: kpd_relation >= 55
-view-if: kpd_truce == 1 and rfd_rb_team == 0 and rb_banned = 0
-unavailable-subtitle: The KPD is not interested.
+view-if: kpd_truce == 1 and rfd_rb_team == 0 and rb_banned = 0 and sa_rb_team == 0
+unavailable-subtitle: The KPD is not interested. [? if sa_rb_team == 1: Because our teamwork with the Facists ?]
 on-arrival: rfd_rb_team = 1; kpd_relation += 5; rfb_strength += 50; rb_strength += 50; sa_strength += 50;
 max-visits: 2
 
 We are coordinating with the KPD, so that our respective paramilitaries can occasionally fight alongside each other in the future.
+
+@teamwork_sa
+choose-if: nsdap_relation >= 55
+view-if: sa_truce == 1 and sa_rb_team == 0 and rfd_rb_team == 0 and rb_banned = 0
+unavailable-subtitle: The SA is not interested. [? if rfd_rb_team == 1: Because our teamwork with the Communists ?]
+on-arrival: sa_rb_team = 1; nsdap_relation += 5; rfb_strength += 50; rb_strength += 50; sa_strength += 50;
+max-visits: 2
+
+We are coordinating with the NSDAP, so that our respective paramilitaries can occasionally fight alongside each other in the future.
 
 @let_them_die
 title: There is nothing we can do.
