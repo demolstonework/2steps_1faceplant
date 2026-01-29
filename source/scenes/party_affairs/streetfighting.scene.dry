@@ -124,6 +124,14 @@ on-arrival: kpd_truce = 1; kpd_relation += 5; rfb_strength += 50; rb_strength +=
 
 We have made at least a temporary truce with the KPD, so that our respective paramilitaries will stop fighting.
 
+@truce_sa
+choose-if: nsdap_relation >= 45
+view-if: sa_truce == 0 and rb_banned = 0
+unavailable-subtitle: The NSDAP is not interested.
+on-arrival: sa_truce = 1; nsdap_relation += 5; rfb_strength += 50; rb_strength += 50; sa_strength += 50;
+
+We have made at least a temporary truce with the NSDAP, so that our respective paramilitaries will stop fighting.
+
 @teamwork_rfb
 choose-if: kpd_relation >= 55
 view-if: kpd_truce == 1 and rfd_rb_team == 0 and rb_banned = 0 and sa_rb_team == 0
