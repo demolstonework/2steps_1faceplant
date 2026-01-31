@@ -18,7 +18,7 @@ At the Labor and Socialist International, we can forge contacts with our fratern
 - @america2: Contact the Socialist party of America.
 - @unity
 - @unity2 
-- @Italy
+- @italy
 - @return: We do not need international contacts at the moment.
 - @easy_discard
 
@@ -95,7 +95,7 @@ The Socialist Party of America is swelling with new members who were inspired by
 We do not need the international contacts at the moment.
 
 
-@Italy
+@italy
 subtitle: -1 resources
 choose-if: resources >= 1 and (nsdap_relation > 0 and left_strength < center_strength)
 view-if: nsdap_relation > 0 or Silly = 1
